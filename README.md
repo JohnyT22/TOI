@@ -5,6 +5,13 @@ Projekt byl vyvýjen v VS Code s rozšířením Eepressif IDF v1.6.1, ne v Platf
 
 Kódy v projektu vychází z příkladů kódu z Dokumentace a Githubu Eepressif IDF
 
+Cílem projektu je vytvořit senzorický modul s platformou ESP32, který dokáže zaznamenávat teplotu a vlhkost (k dispozici dostanete senzor vlhkosti, teploty). Dále si vyzkoušíte možnosti edge computing s využitím jednoduchého modelu neuronové sítě. Projekt implementuje v programovací prostřední PlatformIO s využitím ESP-IDF (budete s ním seznámeni na 1. laboratorním cvičení).
+
+Senzorický modul bude fungovat ve volitelných 2 režimech:
+
+1.	Sběr dat ze senzorů v pravidelných časových intervalech (hodnotu zvolte, dle vašeho uvážení), přičemž každý záznam bude obsahovat UTC čas.
+2.	Sběr dat ze senzorů v pravidelných časových intervalech (hodnotu zvolte, dle vašeho uvážení) a predikce, zdali je naměřená hodnota očekáváná.
+
 ## Popis funkčnosti
 
 Po startu se mikrokontroler připojí k WIFI (nutno nastavit konstanty **EXAMPLE_ESP_WIFI_SSID** a **EXAMPLE_ESP_WIFI_PASS** v souboru `wifi.c`) následně proběhne inicializace knihovny tensorflow lite micro (soubor `neural_network.cc`) a následně inicializace připojení na SNTP pro získání času a spustí se 3 úlohy:
